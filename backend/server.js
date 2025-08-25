@@ -10,13 +10,7 @@ dotenv.config({ debug: true, override: true });
 const app = express();
 const PORT = process.env.PORT ;
 
-app.use(
-  cors({
-    origin: ["https://room-mapping-tool-bice.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 //APIs
