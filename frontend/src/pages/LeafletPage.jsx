@@ -1,11 +1,11 @@
 
-import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
 import "leaflet-draw";
 import { saveRoom } from "../utils/SaveOnCreate";
+import axios from "../utils/axiosIntance";
 
 export default function LeafletPage({ imageUrl,planName }) {
   const mapRef = useRef(null);
@@ -69,7 +69,7 @@ export default function LeafletPage({ imageUrl,planName }) {
           }
 
           const res = await axios.put(
-            `http://localhost:3323/api/room/update/${id}`,
+            `/api/room/update/${id}`,
             { coordinates: updatedCoords }
           );
 
@@ -87,8 +87,8 @@ export default function LeafletPage({ imageUrl,planName }) {
           const id = localStorage.getItem('room');
         //   const id = layer.options.roomId;
           if (id) {
-            await axios.delete(`http://localhost:3323/api/room/delete/${id}`);
-            console.log("🗑️ Room deleted:", id);
+            await axios.delete(`/api/room/delete/${id}`);
+            console.log("Room deleted:", id);
           }
         } catch (error) {
           console.error("Failed to delete room:", error);
@@ -123,7 +123,7 @@ export default function LeafletPage({ imageUrl,planName }) {
 
       // Fetch saved rooms from backend
       try {
-        const res = await axios.get("http://localhost:3323/api/room/lit",{headers:{Authorization:localStorage.getItem('token')}});
+        const res = await axios.get("/api/room/lit",{headers:{Authorization:localStorage.getItem('token')}});
         const rooms = res.data.result;
 
         rooms.forEach((room) => {

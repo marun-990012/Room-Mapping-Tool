@@ -1,8 +1,8 @@
 
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader2, Calendar, Map, Layers } from "lucide-react";
+import axios from "../utils/axiosIntance";
 
 export default function RoomPlanList() {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function RoomPlanList() {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await axios.get("http://localhost:3323/api/room/list", {
+        const response = await axios.get("/api/room/list", {
           headers: { Authorization: localStorage.getItem("token") },
         });
 

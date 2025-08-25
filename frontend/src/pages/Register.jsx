@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Loader2, Eye, EyeOff, User, Mail, Lock } from "lucide-react";
 import {registerValidations} from "../helpers/AuthValidations";
 import { Link } from "react-router-dom";
+import axios from "../utils/axiosIntance";
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ export default function Register() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3323/api/user/signup",
+        "/api/user/signup",
         formData
       );
 

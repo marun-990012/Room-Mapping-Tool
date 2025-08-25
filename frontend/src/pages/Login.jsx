@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react"; // For icons
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { loginValidations } from "../helpers/AuthValidations";
+import axiosInstance from "../utils/axiosIntance";
+import axios from "../utils/axiosIntance";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -26,12 +27,12 @@ export default function Login() {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3323/api/user/signin",formData);
+      const response = await axios.post("/api/user/signin",formData);
       
       console.log("User logged in:", response.data);
       // Save token if required
       localStorage.setItem("token", response.data.token);
-      const accountResponse = await axios.get("http://localhost:3323/api/user/account",{headers:{Authorization:localStorage.getItem('token')}});
+      const accountResponse = await axios.get("/api/user/account",{headers:{Authorization:localStorage.getItem('token')}});
       navigate(`/room-plans`);
       setFormData({email:"",password:""});
     } catch (err) {

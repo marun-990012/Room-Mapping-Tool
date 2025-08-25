@@ -1,6 +1,4 @@
 
-
-import axios from "axios";
 import { Loader2, Trash2 } from "lucide-react"; 
 import { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -8,6 +6,7 @@ import "leaflet-draw";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
+import axios from "../utils/axiosIntance";
 
 export default function RoomPlanDetail() {
   const { id } = useParams(); // Floor plan id
@@ -23,13 +22,13 @@ export default function RoomPlanDetail() {
   useEffect(() => {
     const fetchPlan = async () => {
       try {
-        const res = await axios.get(`http://localhost:3323/api/room/${id}`, {
+        const res = await axios.get(`/api/room/${id}`, {
           headers: { Authorization: localStorage.getItem("token") },
         });
         const selectedPlan = res.data.result;
         setPlan(selectedPlan);
 
-        const response = await axios.get(`http://localhost:3323/api/room/list`, {
+        const response = await axios.get(`/api/room/list`, {
           headers: { Authorization: localStorage.getItem("token") },
         });
         
@@ -134,7 +133,7 @@ export default function RoomPlanDetail() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3323/api/room/create`,
+        `/api/room/create`,
         {
           roomName,
          planName: plan.planName,
@@ -168,7 +167,7 @@ export default function RoomPlanDetail() {
         const updatedCoords = layer.getLatLngs()[0].map(({ lat, lng }) => [lng, lat]);
 
         await axios.put(
-          `http://localhost:3323/api/room/update/${layer.options.roomId}`,
+          `/api/room/update/${layer.options.roomId}`,
           { coordinates: [updatedCoords] },
           { headers: { Authorization: localStorage.getItem("token") } }
         );
@@ -193,7 +192,7 @@ export default function RoomPlanDetail() {
     e.layers.eachLayer(async (layer) => {
       try {
         await axios.delete(
-          `http://localhost:3323/api/room/delete/${layer.options.roomId}`,
+          `/api/room/delete/${layer.options.roomId}`,
           { headers: { Authorization: localStorage.getItem("token") } }
         );
 
@@ -226,7 +225,7 @@ const handleDeletePlan = async ()=>{
     console.log(ids)
     if (window.confirm("Are you sure you want to delete this plan?")) {
               await axios.post(
-                `http://localhost:3323/api/room/deleteplan`,{ids}
+                `/api/room/deleteplan`,{ids}
                 ,{ headers: { Authorization: localStorage.getItem("token") } }
               );
        navigate("/room-plans");
