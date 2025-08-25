@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 function NotFound(){
+    const navigate = useNavigate();
     return(
         <div className="mt-3 w-[100%]">
              <div className="flex flex-col w-[100%] justify-center items-center  border border-[#dfdee3] rounded  mb-4 mt-1 h-100">
