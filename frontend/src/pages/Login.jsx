@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react"; // For icons
 import { Link, useNavigate } from "react-router-dom";
-import { loginValidations } from "../helpers/AuthValidations";
+import { loginValidations } from "../helpers/authValidations";
 import axiosInstance from "../utils/axiosIntance";
 import axios from "../utils/axiosIntance";
 
