@@ -1,11 +1,11 @@
-Room Mapping Tool – Frontend
+# Room Mapping Tool – Frontend
 
 The frontend of the Room Mapping Tool is built with React, Leaflet, and Leaflet Draw. It provides an interactive UI where users can upload floor plans, draw room boundaries, and manage room data securely using JWT authentication.
 
 
-Features
+## Features
 
--> User Authentication
+### -> User Authentication
 
 1 Login & Register using JWT authentication.
 
@@ -13,7 +13,7 @@ Features
 
 
 
--> Upload / Select Floor Plan
+### -> Upload / Select Floor Plan
 
 1 Upload a floor plan image directly to Cloudinary.
 
@@ -22,17 +22,17 @@ Features
 3 View your previously uploaded floor plans.
 
 
--> Draw Rooms
+### -> Draw Rooms
 
 1 Mark rooms using polygons or rectangles on the uploaded floor plan.
 
 2 Prompt users to enter a room name after drawing.
 
--> Room Labels
+### -> Room Labels
 
 1 Display labels overlayed on the image showing room names.
 
--> Manage Rooms
+### -> Manage Rooms
 
 1 View saved rooms for each floor plan.
 
@@ -43,7 +43,7 @@ Features
 4 Provides smooth drawing and editing tools for room mapping.
 
 
--> Tech Stack
+### -> Tech Stack
 
 1 Framework: React.js
 

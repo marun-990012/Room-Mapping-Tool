@@ -1,6 +1,7 @@
 
 
-# Room Mapping Tool – Backend
+# Room Mapping Tool 
+ ## Backend
 
 The backend of the Room Mapping Tool is built with Node.js, Express, MongoDB, and Cloudinary. It provides JWT-secured APIs to manage users, floor plans, and room data.
 
