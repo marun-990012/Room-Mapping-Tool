@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Loader2, Eye, EyeOff, User, Mail, Lock } from "lucide-react";
-import {registerValidations} from "../helpers/AuthValidations";
+import {registerValidations} from "../helpers/authValidations";
 import { Link } from "react-router-dom";
 import axios from "../utils/axiosIntance";
 
