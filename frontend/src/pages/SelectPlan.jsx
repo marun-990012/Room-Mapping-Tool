@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Upload, Loader2 } from "lucide-react";
-import LeafletPage from "./leafletPage";
+import LeafletPage from './LeafletPage'
 import axios from "../utils/axiosIntance";
 
 export default function SelectPlan() {
