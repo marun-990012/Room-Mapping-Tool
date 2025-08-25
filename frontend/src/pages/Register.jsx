@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Loader2, Eye, EyeOff, User, Mail, Lock } from "lucide-react";
 import {registerValidations} from "../helpers/authValidations";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "../utils/axiosIntance";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,7 +35,7 @@ export default function Register() {
         "/api/user/signup",
         formData
       );
-
+      navigate('/signin');
       setMessage("Registration successful!");
       console.log("Response:", response.data);
 
