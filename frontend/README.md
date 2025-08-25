@@ -5,55 +5,56 @@ The frontend of the Room Mapping Tool is built with React, Leaflet, and Leaflet 
 
 Features
 
-User Authentication
+-> User Authentication
 
-Login & Register using JWT authentication.
+1 Login & Register using JWT authentication.
 
-Secure access to user-specific floor plans.
-
-Upload / Select Floor Plan
-
-Upload a floor plan image directly to Cloudinary.
-
-Assign a plan name for better identification.
-
-View your previously uploaded floor plans.
-
-Draw Rooms
-
-Mark rooms using polygons or rectangles on the uploaded floor plan.
-
-Prompt users to enter a room name after drawing.
-
-Room Labels
-
-Display labels overlayed on the image showing room names.
-
-Manage Rooms
-
-View saved rooms for each floor plan.
-
-Edit or delete room names and shapes easily.
-
-Leaflet + Leaflet Draw
-
-Provides smooth drawing and editing tools for room mapping.
+2 Secure access to user-specific floor plans.
 
 
-Tech Stack
 
-Framework: React.js
+-> Upload / Select Floor Plan
 
-Styling: Tailwind CSS
+1 Upload a floor plan image directly to Cloudinary.
 
-Mapping: Leaflet + Leaflet Draw
+2 Assign a plan name for better identification.
 
-State Management: Redux Toolkit
+3 View your previously uploaded floor plans.
 
-API Integration: Axios
 
-Authentication: JWT
+-> Draw Rooms
 
-Image Uploads: Cloudinary
+1 Mark rooms using polygons or rectangles on the uploaded floor plan.
 
-Deployment: Vercel
+2 Prompt users to enter a room name after drawing.
+
+-> Room Labels
+
+1 Display labels overlayed on the image showing room names.
+
+-> Manage Rooms
+
+1 View saved rooms for each floor plan.
+
+2 Edit or delete room names and shapes easily.
+
+3 Leaflet + Leaflet Draw
+
+4 Provides smooth drawing and editing tools for room mapping.
+
+
+-> Tech Stack
+
+1 Framework: React.js
+
+2 Styling: Tailwind CSS
+
+3 Mapping: Leaflet + Leaflet Draw
+
+4 API Integration: Axios
+
+5 Authentication: JWT
+
+6 Image Uploads: Cloudinary
+
+7 Deployment: Vercel
