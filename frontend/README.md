@@ -1,12 +1,59 @@
-# React + Vite
+Room Mapping Tool – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend of the Room Mapping Tool is built with React, Leaflet, and Leaflet Draw. It provides an interactive UI where users can upload floor plans, draw room boundaries, and manage room data securely using JWT authentication.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## Expanding the ESLint configuration
+User Authentication
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Login & Register using JWT authentication.
+
+Secure access to user-specific floor plans.
+
+Upload / Select Floor Plan
+
+Upload a floor plan image directly to Cloudinary.
+
+Assign a plan name for better identification.
+
+View your previously uploaded floor plans.
+
+Draw Rooms
+
+Mark rooms using polygons or rectangles on the uploaded floor plan.
+
+Prompt users to enter a room name after drawing.
+
+Room Labels
+
+Display labels overlayed on the image showing room names.
+
+Manage Rooms
+
+View saved rooms for each floor plan.
+
+Edit or delete room names and shapes easily.
+
+Leaflet + Leaflet Draw
+
+Provides smooth drawing and editing tools for room mapping.
+
+
+Tech Stack
+
+Framework: React.js
+
+Styling: Tailwind CSS
+
+Mapping: Leaflet + Leaflet Draw
+
+State Management: Redux Toolkit
+
+API Integration: Axios
+
+Authentication: JWT
+
+Image Uploads: Cloudinary
+
+Deployment: Vercel
