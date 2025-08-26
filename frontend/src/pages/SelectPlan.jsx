@@ -52,7 +52,7 @@ export default function SelectPlan() {
     <div className="bg-gray-100">
     <div className="flex px-6">
       <div>
-        <div className="flex items-center justify-evenly gap-2 bg-white shadow-md rounded-xl w-[100%] mt-5 p-3">
+        <div className="flex items-center justify-evenly gap-5 bg-white shadow-md rounded-xl w-[100%] mt-5 p-3">
           {/* Upload Button */}
           <div className="flex flex-col items-center gap-3 bg-blue-200 p-1 rounded-lg">
             <label
