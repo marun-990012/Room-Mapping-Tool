@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const connectDB = async ()=>{
     try {
        const uri = process.env.DB_URI;
-        console.log(uri);
+        // console.log(uri);
         if (!uri) {
          throw new Error("Database URI is not defined in environment variables");
         }

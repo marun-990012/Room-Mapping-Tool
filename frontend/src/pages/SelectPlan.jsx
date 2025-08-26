@@ -6,7 +6,7 @@ import LeafletPage from './LeafletPage'
 import axios from "../utils/axiosIntance";
 
 export default function SelectPlan() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
@@ -37,7 +37,7 @@ export default function SelectPlan() {
       // Save uploaded image URL
       console.log(response.data)
       setImageUrl(response.data);
-      const name = prompt('enter plan name');
+      const name = prompt('Enter project name');
       setPlanName(name);
     } catch (error) {
       console.error("Image upload failed:", error);
@@ -60,7 +60,7 @@ export default function SelectPlan() {
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow cursor-pointer transition-all duration-300"
             >
               {loading ? <Loader2 size={18} className="animate-spin" /> : <Upload size={18} />}
-              <span>{file ? "Change Room Plan" : "Select Room Plan"}</span>
+              <span className="text-[11px] md:text-[15px]">{file ? "Change Room Plan" : "Select Room Plan"}</span>
             </label>
             <input
               id="file-upload"
@@ -97,7 +97,7 @@ export default function SelectPlan() {
           </div>
 
           <div className="bg-green-200 p-1 rounded-lg">
-            <button onClick={()=>navigate('/room-plans')} className="bg-green-500 hover:bg-green-700 rounded-lg text-white px-4 py-2 transition-all duration-300 cursor-pointer">View my plans</button>
+            <button onClick={()=>navigate('/room-plans')} className="bg-green-500 hover:bg-green-700 rounded-lg text-white px-4 py-2 transition-all duration-300 cursor-pointer text-[11px] md:text-[15px]">View Projects</button>
           </div>
         </div>
       </div>

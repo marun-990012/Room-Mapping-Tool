@@ -52,11 +52,11 @@ export default function RoomPlanList() {
         <div className="bg-gray-200 p-10 rounded-lg">
             <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-gray-800">
-             Your Plans
+             My Projects
             </h2>
 
             <div className="bg-white p-1 rounded-lg">
-            <button onClick={()=>{navigate('/create')}} className="bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded-lg transition-all duration-300 cursor-pointer">Create new plan</button>
+            <button onClick={()=>{navigate('/create')}} className="bg-blue-500 hover:bg-green-700 text-white py-1 px-3 rounded-lg transition-all duration-300 cursor-pointer">Create Project</button>
             </div>
         </div>
 
