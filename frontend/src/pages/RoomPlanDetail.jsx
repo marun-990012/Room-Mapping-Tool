@@ -1,5 +1,5 @@
 
-import { Loader2, Trash2 } from "lucide-react"; 
+import { Loader2, SquarePen, Trash2 } from "lucide-react"; 
 import { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "leaflet-draw";
@@ -248,10 +248,10 @@ const handleDeletePlan = async ()=>{
   return (
     <div className="min-h-screen bg-gray-100 px-6 py-6">
         <div className="flex gap-3">
-            <button onClick={()=>{navigate(-1)}} className="bg-gray-500 px-3 py-1 rounded text-white">Back</button>
-            <button onClick={()=>{navigate('/create')}} className="bg-green-500 px-3 py-1 rounded text-white">create new</button>
+            <button onClick={()=>{navigate(-1)}} className="bg-gray-500 px-3 py-1 rounded border-2 border-white text-white">Back</button>
+            <button onClick={()=>{navigate('/create')}} className="flex items-center justify-evenly gap-2 bg-green-500 hover:bg-green-700 transition-all duration-300 px-3 py-1 rounded border-2 border-green-200 text-white"><SquarePen size={16} />create new</button>
         </div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6"> 
         <h2 className="text-2xl font-bold text-gray-800">
           Plan — {plan.planName}
         </h2>
